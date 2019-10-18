@@ -19,6 +19,37 @@
 <h2 id="setting-up-aws">Setting up AWS</h2>
 <p>Once you’ve signed up for an Amazon Web Services account, here’s how to launch the server that we’ll use for our VPN:</p>
 <ol>
-<li>Log into your Amazon Web Service account and head to the EC2 dashboard.<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_1.png" alt="EC2"></li>
+<li>
+<p>Log into your Amazon Web Service account and head to the EC2 dashboard.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_1.png" alt="EC2"></p>
+</li>
+<li>
+<p>On the top right, you can choose the location where we’ll be setting up your VPN. Then click Launch Instance.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_2.png" alt="EC2"></p>
+</li>
+<li>
+<p>Choose whatever Linux AMI is listed as “free tier eligible.” At the time of writing this article, I’m choosing <strong>Ubuntu Server 16.04 LTS</strong>. Go on to the next step.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_3.png" alt="EC2"></p>
+</li>
+<li>
+<p>Here choose a t2.micro instance that’s also free tier eligible. Click <strong>Review and Launch</strong>.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_4.png" alt="EC2"></p>
+</li>
+<li>
+<p>On the next page, click <strong>Edit Security Groups</strong>.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_5.png" alt="EC2"></p>
+</li>
+<li>
+<p>You’ll need to edit the security group to only allow traffic from your computer to access the VPN or proxy. You should have one rule already in place for connecting to your server via SSH, which we’ll use later. We’ll need to add another to allow OpenVPN connections, which use port 1194 by default. For simplicity’s sake, click the  <strong>Add rule</strong>  button. Set the  <strong>Type</strong>  to  <strong>Custom UDP</strong>, the <strong>Port Range</strong>  to <strong>1194</strong>, and the Source to  <strong>Anywhere</strong>.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_6.png" alt="EC2"></p>
+</li>
+<li>
+<p>Click <strong>Review and Launch</strong><br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_7.png" alt="EC2"></p>
+</li>
+<li>
+<p>If all went well, your page should look similar (your Source IP will be different) with the rules we just created in the “Security Groups” section. Now click <strong>Launch</strong><br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_8.png" alt="EC2"></p>
+</li>
 </ol>
 
