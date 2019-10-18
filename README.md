@@ -78,7 +78,8 @@
 <ol>
 <li>
 <p>Connect to your EC2 instance using PuTTy according to the instructions above. Once logged in update and install the packages on the server:<br>
-<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</code> <img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_14.png" alt="EC2"></p>
+<code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</code><br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_14.png" alt="EC2"></p>
 </li>
 <li>
 <p>Start the PiVPN installer:<br>
