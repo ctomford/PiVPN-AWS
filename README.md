@@ -141,7 +141,7 @@ For more detail on this, see <a href="http://www.pivpn.io/#tech">http://www.pivp
 <p>In the right pane, navigate to the directory containing your key files, in this case <strong>/home/ubuntu/ovpns</strong></p>
 </li>
 <li>
-<p>Highlight your file {username.ovpn} and click the download button or drag the file from the right pane to the left pane. This will download the .ovpn file to your current directory.</p>
+<p>Highlight your file {username.ovpn} and click the download button or drag the file from the right pane to the left pane (your computer). This will download the .ovpn file to your current directory.</p>
 </li>
 <li>
 <p>Once downloaded you can import this to your <a href="https://openvpn.net/client-connect-vpn-for-windows/">OpenVPN client software for Windows</a>.</p>
