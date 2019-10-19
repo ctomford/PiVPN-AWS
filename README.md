@@ -124,16 +124,18 @@ For more detail on this, see <a href="http://www.pivpn.io/#tech">http://www.pivp
 <h2 id="download-vpn-configuration-files-for-use-locally">Download VPN configuration files for use locally</h2>
 <ol>
 <li>
-<p>To get the files off of our server and onto our PC, we’ll use a free program called WinSCP. Just use the default installation options. Once that’s done, a window should pop up prompting you to import your server authentication details from PuTTy. Select the one we made above and continue.<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_34.png" alt="EC2"></p>
+<p>To get the files off of our server and onto our PC, we’ll use a free program called WinSCP. Just use the default installation options. Once that’s done, a window should pop up prompting you to import your server authentication details from PuTTy. Select the one we made above and continue.</p>
 </li>
 <li>
-<p>Select myvpn (or whatever you named yours) and hit the Edit button. Type in <strong>ubuntu</strong> under user name. Click on Login.</p>
+<p>Select myvpn (or whatever you named yours) and hit the Edit button. Type in <strong>ubuntu</strong> under user name. Click on Login.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_34.png" alt="EC2"></p>
 </li>
 <li>
-<p>If this isn’t your first time using WinSCP, you can set the .ppk file you used in PuTTy by clicking <strong>Edit</strong> and <strong>Advanced</strong>. Go to <strong>SSH &gt; Authentication &gt; Private key file</strong> and navigate to your PPK file.</p>
+<p>If this isn’t your first time using WinSCP, you can set the .ppk file you used in PuTTy by clicking <strong>Edit</strong> and <strong>Advanced</strong>. Go to <strong>SSH &gt; Authentication &gt; Private key file</strong> and navigate to your PPK file.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_35.png" alt="EC2"></p>
 </li>
 <li>
-<p>In the host name field on the main page, you can enter either the IP address or domain of your EC2 instance. Be sure to save your settings, then hit <strong>Login</strong>.<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_35.png" alt="EC2"></p>
+<p>In the host name field on the main page, you can enter either the IP address or domain of your EC2 instance. Be sure to save your settings, then hit <strong>Login</strong>.</p>
 </li>
 <li>
 <p>In the right pane, navigate to the directory containing your key files, in this case <strong>/home/ubuntu/ovpns</strong></p>
