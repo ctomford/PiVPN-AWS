@@ -141,5 +141,11 @@ For more detail on this, see <a href="http://www.pivpn.io/#tech">http://www.pivp
 <li>
 <p>Highlight your file {username.ovpn} and click the download button or drag the file from the right pane to the left pane. This will download the .ovpn file to your current directory.</p>
 </li>
+<li>
+<p>Once downloaded you can import this to your <a href="https://openvpn.net/client-connect-vpn-for-windows/">OpenVPN client software for Windows</a>.</p>
+</li>
+<li>
+<p>(Optionally) You can install the client on your Android phone through the <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn&amp;hl=en_US">GooglePlay</a>, download and import this file to your Android phone and have a VPN on your phone as well.</p>
+</li>
 </ol>
 
