@@ -73,11 +73,11 @@
 <p>A prompt will appear asking you for a username. For the Amazon Ubuntu AMI, it’s <code>ubuntu</code>.</p>
 </li>
 </ol>
-<h2 id="setup-openvpn-on-the-server-and-windows">Setup OpenVPN on the server and Windows</h2>
+<h2 id="setup-openvpn-on-the-server">Setup OpenVPN on the server</h2>
 <p>OpenVPN is a free open source tool that will let you run a full-on VPN through your Amazon EC2 instance. That means all your internet traffic goes through it.</p>
 <ol>
 <li>
-<p>Connect to your EC2 instance using PuTTy according to the instructions above. Once logged in update and install the packages on the server:<br>
+<p>Connect to your EC2 instance using PuTTy according to the instructions above. Once logged in, update and install the packages on the server:<br>
 <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</code><br>
 <img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_14.png" alt="EC2"></p>
 </li>
@@ -91,4 +91,55 @@ For more detail on this, see <a href="http://www.pivpn.io/#tech">http://www.pivp
 <p><img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_16.png" alt="EC2"></p>
 <p><img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_17.png" alt="EC2"></p>
 <p><img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_18.png" alt="EC2"></p>
+<p>Choose the default ubuntu user.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_19.png" alt="EC2"></p>
+<p>We do want to enable unattended upgrades of security patches.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_20.png" alt="EC2"></p>
+<p>Choose UDP as the protocol to use.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_21.png" alt="EC2"></p>
+<p>Choose the default port 1194.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_22.png" alt="EC2"></p>
+<p><img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_23.png" alt="EC2"></p>
+<p>Create a 2048 bit encryption key.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_24.png" alt="EC2"></p>
+<p><img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_25.png" alt="EC2"></p>
+<p>Choose to use your servers public IP address.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_26.png" alt="EC2"></p>
+<p>Choose whichever DNS provider you would like to use. I chose Google.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_27.png" alt="EC2"></p>
+<p>Installation is now complete 🙂<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_28.png" alt="EC2"></p>
+<p>Choose to reboot the server.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_29.png" alt="EC2"></p>
+<p><img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_30.png" alt="EC2"></p>
+<p>Once the server has rebooted, checking the AWS dashboard for it’s status, SSH back in to the server.</p>
+<p>Now we need to configure a VPN profile that we can use to connect to the VPN server.</p>
+<p>The easiest way to do this is to use the ​​​​pivpn command line utility:<br>
+<code>pivpn add</code><br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_31.png" alt="EC2"></p>
+<p>This will guide you through the process of creating a profile. Make sure to use a strong password and note both the profile name and the password as you will need these later.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_32.png" alt="EC2"></p>
+<p>Set up is now complete so you can logout.<br>
+<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_33.png" alt="EC2"></p>
+<h2 id="download-vpn-configuration-files-for-use-locally">Download VPN configuration files for use locally</h2>
+<ol>
+<li>
+<p>To get the files off of our server and onto our PC, we’ll use a free program called WinSCP. Just use the default installation options. Once that’s done, a window should pop up prompting you to import your server authentication details from PuTTy. Select the one we made above and continue.<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_34.png" alt="EC2"></p>
+</li>
+<li>
+<p>Select myvpn (or whatever you named yours) and hit the Edit button. Type in <strong>ubuntu</strong> under user name. Click on Login.</p>
+</li>
+<li>
+<p>If this isn’t your first time using WinSCP, you can set the .ppk file you used in PuTTy by clicking <strong>Edit</strong> and <strong>Advanced</strong>. Go to <strong>SSH &gt; Authentication &gt; Private key file</strong> and navigate to your PPK file.</p>
+</li>
+<li>
+<p>In the host name field on the main page, you can enter either the IP address or domain of your EC2 instance. Be sure to save your settings, then hit <strong>Login</strong>.<img src="https://github.com/ctomford/PiVPN-AWS/blob/master/screenshots/Screenshot_35.png" alt="EC2"></p>
+</li>
+<li>
+<p>In the right pane, navigate to the directory containing your key files, in this case <strong>/home/ubuntu/ovpns</strong></p>
+</li>
+<li>
+<p>Highlight your file {username.ovpn} and click the download button or drag the file from the right pane to the left pane. This will download the .ovpn file to your current directory.</p>
+</li>
+</ol>
 
